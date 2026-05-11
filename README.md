@@ -1,5 +1,10 @@
 # Dumbbell Satellite Attitude Control — UKF + MPC
 
+> **Note:** This repository contains my individual implementation 
+> of the MPC algorithm and UKF-MPC closed-loop integration, 
+> developed as part of a team project for AAE 568 at Purdue University. 
+> Full project report included for technical reference.
+
 ## Overview
 Closed-loop attitude estimation and control system for a rigid dumbbell-shaped satellite on an eccentric orbit (e=0.6). An Unscented Kalman Filter (UKF) fuses gyroscope, sun sensor, and magnetometer measurements for full-state attitude estimation, which feeds a Model Predictive Control (MPC) algorithm that computes optimal reaction wheel torques over a 10-step prediction horizon subject to actuator constraints.
 
@@ -30,9 +35,21 @@ Developed as part of AAE 568 — Applied Optimal Control and Estimation, Purdue 
 UKF estimate → MPC → Plant (RK4) → UKF (receding horizon)
 
 ## Results
-- MPC drives 65° initial misalignment to within 1° of sun-pointing in under 0.3 hours
-- All actuator torques remain within ±5×10⁻⁴ N·m saturation limits
-- UKF attitude errors settle within ±0.5° and remain bounded by 3σ envelopes for the full orbital period
+
+### Sun-Pointing Convergence
+MPC drives 65° initial misalignment to within 1° of sun-pointing in under 0.3 hours and maintains it for the full orbital period.
+
+![Sun Angle](figures/sun_angle.png)
+
+### Control Torques
+All three torque channels saturate at ±5×10⁻⁴ N·m during initial reorientation and settle well within bounds after convergence.
+
+![Control Torques](figures/torques2.png)
+
+### UKF Attitude Estimation Error with 3σ Bounds
+Attitude errors settle within ±0.5° and remain bounded by 3σ envelopes for the full orbital period, confirming filter consistency.
+
+![UKF Sigma Bounds](figures/ukf_sigma.png)
 
 ## Dependencies
 - MATLAB R2021a or later
@@ -42,6 +59,7 @@ UKF estimate → MPC → Plant (RK4) → UKF (receding horizon)
 ## Files
 - `main.m` — Main simulation loop (UKF + MPC integration)
 - `DARE_KF_Report.pdf` — Full technical report
+- `figures/` — Simulation result plots
 
 ## Course
 AAE 568 — Applied Optimal Control and Estimation
