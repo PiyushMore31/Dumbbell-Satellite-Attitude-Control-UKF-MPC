@@ -10,7 +10,7 @@ Closed-loop attitude estimation and control system for a rigid dumbbell-shaped s
 
 Developed as part of AAE 568 — Applied Optimal Control and Estimation, Purdue University (Spring 2026).
 
-![Simulation](satellite_attitude_control.gif)
+![Simulation](figures/satellite_attitude_control.gif)
 
 ## System Description
 - **Satellite:** Dumbbell configuration — two spherical masses connected by a thin rod
