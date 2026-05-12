@@ -11,6 +11,7 @@ Closed-loop attitude estimation and control system for a rigid dumbbell-shaped s
 Developed as part of AAE 568 — Applied Optimal Control and Estimation, Purdue University (Spring 2026).
 
 ![Simulation](satellite_attitude_control.gif)
+*Figure 1: Dumbbell satellite on an eccentric orbit (e = 0.6) around Earth, with the Sun at periapsis. The UKF fuses gyroscope, sun sensor, and magnetometer data to estimate attitude, while MPC computes optimal reaction wheel torques over a 10-step prediction horizon.*
 
 ## System Description
 - **Satellite:** Dumbbell configuration — two spherical masses connected by a thin rod
