@@ -58,10 +58,25 @@ Attitude errors settle within ±0.5° and remain bounded by 3σ envelopes for th
 - Aerospace Toolbox
 - Model Predictive Control Toolbox
 
-## Files
-- `main.m` — Main simulation loop (UKF + MPC integration)
-- `DARE_KF_Report.pdf` — Full technical report
-- `figures/` — Simulation result plots
+# Repository Structure
+```
+project-root
+│
+├── Matlab                    # MATLAB simulation & control scripts
+│   └── UKF_MPC.m             # UKF-MPC controller implementation
+│
+├── figures                   # Simulation plots and results
+│   ├── satellite_attitude_control.gif   # Attitude animation
+│   ├── sun_angle.png
+│   ├── torques2.png
+│   └── ukf_sigma.png
+│
+├── Report                    # Project documentation
+│   └── DARE_KF.pdf
+│
+└── README.md
+     
+```
 
 ## Course
 AAE 568 — Applied Optimal Control and Estimation
