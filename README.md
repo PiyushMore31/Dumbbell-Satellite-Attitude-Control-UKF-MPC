@@ -58,7 +58,7 @@ Attitude errors settle within ±0.5° and remain bounded by 3σ envelopes for th
 - Aerospace Toolbox
 - Model Predictive Control Toolbox
 
-# Repository Structure
+## Repository Structure
 ```
 project-root
 │
